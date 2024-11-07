@@ -28,8 +28,8 @@ export const ButtonLink = styled(Link)`
   padding: 4px 8px;
   font-size: 16px;
   font-weight: bold;
-  background-color: ${cores.fundo};
-  color: ${cores.texto};
+  background-color: ${cores.texto};
+  color: ${cores.branco};
   text-decoration: none;
   cursor: pointer;
 

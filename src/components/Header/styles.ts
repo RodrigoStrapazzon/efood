@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { cores } from "../../../styles/styles";
+import fundo from "../../assets/image/fundo.png";
 
 export const Content = styled.div`
-  background-color: ${cores.fundo};
+  background-image: url(${fundo});
+  background-size: cover;
   text-align: center;
 
   img {

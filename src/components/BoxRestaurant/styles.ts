@@ -6,7 +6,7 @@ export const BoxContainer = styled.div`
   background-color: ${cores.branco};
   position: relative;
   width: 471px;
-  border: 1px solid ${cores.fundo};
+  border: 1px solid ${cores.texto};
 
   .note {
     display: flex;
