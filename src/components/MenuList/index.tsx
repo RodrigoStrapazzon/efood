@@ -16,7 +16,7 @@ const ListMenu = ({ menu }: Props) => (
               <MenuList
                 image={menu.foto}
                 preco={menu.preco}
-                item={menu.id}
+                item={menu}
                 title={menu.nome}
                 description={menu.descricao}
                 porcao={menu.porcao}

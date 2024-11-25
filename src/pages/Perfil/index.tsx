@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import ListMenu from "../../components/MenuList";
-import HeaderPerfil from "../../components/HeaderPerfil";
+import { useGetPerfilQuery } from "../../services/api";
 import { ContainerPerfil } from "./styles";
-import { Establishment } from "../Home";
+import HeaderPerfil from "../../components/HeaderPerfil";
+import ListMenu from "../../components/MenuList";
+import Cart from "../../components/Cart";
 
 const Perfil = () => {
   const { id } = useParams();
-
-  const [cardapio, setCardapio] = useState<Establishment>();
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setCardapio(res));
-  }, [id]);
+  const { data: cardapio } = useGetPerfilQuery(id!);
 
   if (!cardapio) {
     return <h3>Carregando...</h3>;
@@ -37,6 +30,7 @@ const Perfil = () => {
       />
       <img className="imgPerfil" src={cardapio.capa} alt={cardapio.titulo} />
       <ListMenu menu={cardapio.cardapio} />
+      <Cart />
     </ContainerPerfil>
   );
 };

@@ -12,13 +12,18 @@ import {
 
 import fecharImg from "../../assets/image/fechar.png";
 
+import { useDispatch } from "react-redux";
+import { add, open } from "../../store/reducers/cart";
+import Button from "../Button";
+import { MenuItem } from "../../pages/Home";
+
 type Props = {
   image: string;
   preco: number;
-  item?: number;
   title: string;
   description: string;
   porcao: string;
+  item: MenuItem;
 };
 
 export const formataPreco = (preco: number) => {
@@ -28,7 +33,14 @@ export const formataPreco = (preco: number) => {
   }).format(preco);
 };
 
-const MenuList = ({ image, title, description, preco, porcao }: Props) => {
+const MenuList = ({
+  image,
+  title,
+  description,
+  preco,
+  porcao,
+  item,
+}: Props) => {
   const getDescricao = (description: string) => {
     if (description.length > 163) {
       return description.slice(0, 160) + "...";
@@ -37,6 +49,12 @@ const MenuList = ({ image, title, description, preco, porcao }: Props) => {
   };
 
   const [modalEstaAberto, setModalEstaAberto] = useState(false);
+
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(add(item!));
+    dispatch(open());
+  };
 
   return (
     <>
@@ -65,9 +83,11 @@ const MenuList = ({ image, title, description, preco, porcao }: Props) => {
             />
             <p>{description}</p>
             <p>{`Serve: ${porcao}`}</p>
-            <button>{`Adicionao ao carrinho R$ - ${formataPreco(
-              preco
-            )}`}</button>
+            <Button
+              type="button"
+              title="Clique para adicinar ao carrinho"
+              onClick={addToCart}
+            >{`Adicionao ao carrinho R$ - ${formataPreco(preco)}`}</Button>
           </ModalDescription>
         </ModalContent>
         <div

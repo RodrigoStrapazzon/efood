@@ -5,6 +5,7 @@ export const cores = {
   fundoHome: "#FFF8F2",
   texto: "#E66767",
   branco: "#fff",
+  preto: "#000",
 };
 
 export const EstiloGlobal = createGlobalStyle`
