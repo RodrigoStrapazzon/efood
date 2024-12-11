@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../../styles/styles";
+import { breakpoints, cores } from "../../../styles/styles";
 
 export const BoxMenu = styled.ul`
   width: 320px;
@@ -65,6 +65,10 @@ export const ModalContent = styled.div`
     height: 280px;
     object-fit: cover;
     padding: 32px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin-top: 5px;
+    }
   }
 `;
 
@@ -92,5 +96,10 @@ export const ModalDescription = styled.div`
     background-color: ${cores.fundo};
     color: ${cores.texto};
     border: none;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+      white-space: nowrap;
+    }
   }
 `;

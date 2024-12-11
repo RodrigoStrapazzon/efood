@@ -5,7 +5,7 @@ import LogoTwitter from "../../assets/image/Twitter.svg";
 import { FooterBox, Paragrafo } from "./styles";
 
 const Footer = () => (
-  <FooterBox>
+  <FooterBox className="container">
     <img className="imgEfood" src={LogoEfood} alt="logo efood" />
     <div className="imgLinks">
       <a href="#">

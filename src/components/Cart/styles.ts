@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../../styles/styles";
+import {  cores } from "../../../styles/styles";
 import { ButtonContainer } from "../Button/styles";
 import iconFechar from "../../assets/image/fechar2.png";
 export const Overlay = styled.div`
@@ -91,7 +91,7 @@ export const CartItem = styled.li`
 export const ContainerItem = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 71%;
   height: 100px;
   background-color: ${cores.fundo};
   color: ${cores.texto};

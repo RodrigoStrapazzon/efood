@@ -1,12 +1,16 @@
 import styled from "styled-components";
-import { cores } from "../../../styles/styles";
+import { breakpoints } from "../../../styles/styles";
 
 export const ContainerMenu = styled.section`
-  width: 1024px;
+  max-width: 1024px;
   padding-top: 56px;
   padding-bottom: 120px;
   padding-left: 170px;
-  background-color: ${cores.fundoHome};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    overflow-y: hidden;
+    margin: 0 auto;
+  }
 `;
 
 export const List = styled.ul`
@@ -14,4 +18,9 @@ export const List = styled.ul`
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 40px;
   gap: 40px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0 0 -140px;
+  }
 `;

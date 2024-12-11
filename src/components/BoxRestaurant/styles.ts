@@ -25,6 +25,7 @@ export const BoxContainer = styled.div`
     width: 100%;
     height: 217px;
     object-fit: cover;
+    object-position: top;
   }
 
   ${TagContainer} {

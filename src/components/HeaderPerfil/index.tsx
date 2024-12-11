@@ -28,8 +28,8 @@ const HeaderPerfil = ({ content }: Props) => {
   };
 
   return (
-    <>
-      <ContentPerfil>
+    <div>
+      <ContentPerfil className="container">
         <LinkPerfil to="/">Restaurantes</LinkPerfil>
         <img src={LogoEfood} alt="logo da efood" />
         <CartPerfil onClick={openCart}>
@@ -41,7 +41,7 @@ const HeaderPerfil = ({ content }: Props) => {
         <TituloPerfil>{content.titulo}</TituloPerfil>
         <img className="sombra" src={sombra} alt="sombra do banner" />
       </TextoPerfil>
-    </>
+    </div>
   );
 };
 

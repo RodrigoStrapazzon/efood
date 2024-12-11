@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../../styles/styles";
 
 export const ContainerPerfil = styled.div`
   position: relative;
@@ -7,6 +8,10 @@ export const ContainerPerfil = styled.div`
     width: 1366px;
     height: 280px;
     object-fit: cover;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+    }
   }
 
   .sombra {

@@ -9,22 +9,20 @@ type Props = {
 const ListMenu = ({ menu }: Props) => (
   <ContainerMenu>
     <div className="container">
-      <ul>
-        <List>
-          {menu.map((menu) => (
-            <li key={menu.id}>
-              <MenuList
-                image={menu.foto}
-                preco={menu.preco}
-                item={menu}
-                title={menu.nome}
-                description={menu.descricao}
-                porcao={menu.porcao}
-              />
-            </li>
-          ))}
-        </List>
-      </ul>
+      <List>
+        {menu.map((menu) => (
+          <li key={menu.id}>
+            <MenuList
+              image={menu.foto}
+              preco={menu.preco}
+              item={menu}
+              title={menu.nome}
+              description={menu.descricao}
+              porcao={menu.porcao}
+            />
+          </li>
+        ))}
+      </List>
     </div>
   </ContainerMenu>
 );

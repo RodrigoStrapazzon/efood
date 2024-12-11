@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const cores = {
   fundo: "#FFEBD9",
@@ -6,6 +6,11 @@ export const cores = {
   texto: "#E66767",
   branco: "#fff",
   preto: "#000",
+};
+
+export const breakpoints = {
+  desktop: "1024px",
+  tablet: "768px",
 };
 
 export const EstiloGlobal = createGlobalStyle`
@@ -22,13 +27,9 @@ export const EstiloGlobal = createGlobalStyle`
 
   .container {
     max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   }
-`;
-
-export const Container = styled.div`
-  max-width: 1366px;
-  width: 100%;
-  margin: 0 auto;
 `;

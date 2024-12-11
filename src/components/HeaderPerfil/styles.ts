@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-import { cores } from "../../../styles/styles";
+import { breakpoints, cores } from "../../../styles/styles";
 
 export const ContentPerfil = styled.div`
-  width: 1366px;
+  max-width: 1366px;
+  width: 100%;
   height: 186px;
   background-color: ${cores.fundo};
   color: ${cores.texto};
@@ -12,12 +13,23 @@ export const ContentPerfil = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100%;
+  }
+
   img {
     margin-left: 73px;
   }
 `;
 export const TextoPerfil = styled.div`
   z-index: 1;
+
+  .sombra {
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
+      height: 280px;
+    }
+  }
 `;
 
 export const LinkPerfil = styled(Link)`
@@ -26,11 +38,20 @@ export const LinkPerfil = styled(Link)`
   margin-left: 170px;
   color: ${cores.texto};
   text-decoration: none;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-left: 153px;
+  }
 `;
+
 export const CartPerfil = styled.p`
   font-size: 18px;
   font-weight: bold;
   margin-right: 170px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin: 0 auto;
+  }
 `;
 
 export const TituloTipoPerfil = styled.h2`
