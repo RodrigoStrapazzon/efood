@@ -38,7 +38,7 @@ export const ModalContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  &.visivel {
+  &.is-visible {
     display: flex;
   }
 
@@ -60,6 +60,16 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 80%;
+    flex-direction: column;
+    text-align: center;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 90%;
+    flex-direction: row;
+  }
+
   > img {
     width: 280px;
     height: 280px;
@@ -68,6 +78,7 @@ export const ModalContent = styled.div`
 
     @media (max-width: ${breakpoints.desktop}) {
       margin-top: 5px;
+      margin: 0 auto;
     }
   }
 `;
@@ -80,12 +91,23 @@ export const ModalDescription = styled.div`
   row-gap: 20px;
   padding: 32px 32px 32px 0px;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    margin-left: 15px;
+  }
+
   img {
     position: absolute;
     top: 8px;
     right: 8px;
     width: 16px;
     cursor: pointer;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      top: -270px;
+    }
+    @media (min-width: ${breakpoints.tablet}) {
+      top: 10px;
+    }
   }
 
   button {
@@ -100,6 +122,10 @@ export const ModalDescription = styled.div`
     @media (max-width: ${breakpoints.desktop}) {
       width: 100%;
       white-space: nowrap;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-left: 15px;
     }
   }
 `;

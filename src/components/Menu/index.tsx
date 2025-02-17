@@ -1,21 +1,13 @@
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-import { ButtonCart } from "../Button/styles";
-import {
-  BoxMenu,
-  DescriptionMenu,
-  ModalContainer,
-  ModalContent,
-  ModalDescription,
-  TitleMenu,
-} from "./styles";
-
-import fecharImg from "../../assets/image/fechar.png";
-
-import { useDispatch } from "react-redux";
-import { add, open } from "../../store/reducers/cart";
-import Button from "../Button";
+import { parseToBrl } from "../../utils";
 import { MenuItem } from "../../pages/Home";
+import { ButtonCart } from "../Button/styles";
+import Button from "../Button";
+
+import closeImg from "../../assets/image/fechar.png";
+import * as S from "./styles";
 
 type Props = {
   image: string;
@@ -26,13 +18,6 @@ type Props = {
   item: MenuItem;
 };
 
-export const formataPreco = (preco: number) => {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(preco);
-};
-
 const MenuList = ({
   image,
   title,
@@ -41,14 +26,14 @@ const MenuList = ({
   porcao,
   item,
 }: Props) => {
-  const getDescricao = (description: string) => {
-    if (description.length > 163) {
-      return description.slice(0, 160) + "...";
+  const getDescription = (text: string) => {
+    if (text.length > 163) {
+      return text.slice(0, 160) + "...";
     }
-    return description;
+    return text;
   };
 
-  const [modalEstaAberto, setModalEstaAberto] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const dispatch = useDispatch();
   const addToCart = () => {
@@ -58,28 +43,28 @@ const MenuList = ({
 
   return (
     <>
-      <BoxMenu>
+      <S.BoxMenu>
         <img src={image} alt={title} />
-        <TitleMenu>{title}</TitleMenu>
-        <DescriptionMenu>{getDescricao(description)}</DescriptionMenu>
+        <S.TitleMenu>{title}</S.TitleMenu>
+        <S.DescriptionMenu>{getDescription(description)}</S.DescriptionMenu>
         <ButtonCart
           type="button"
           title="clique aqui"
-          onClick={() => setModalEstaAberto(true)}
+          onClick={() => setOpenModal(true)}
         >
           Adicionar ao carrinho
         </ButtonCart>
-      </BoxMenu>
+      </S.BoxMenu>
 
-      <ModalContainer className={modalEstaAberto ? "visivel" : ""}>
-        <ModalContent>
+      <S.ModalContainer className={openModal ? 'is-visible' : ''}>
+        <S.ModalContent>
           <img src={image} alt={title} />
-          <ModalDescription>
+          <S.ModalDescription>
             <h2>{title}</h2>
             <img
-              src={fecharImg}
+              src={closeImg}
               alt="Ícone de fechar"
-              onClick={() => setModalEstaAberto(false)}
+              onClick={() => setOpenModal(false)}
             />
             <p>{description}</p>
             <p>{`Serve: ${porcao}`}</p>
@@ -87,14 +72,11 @@ const MenuList = ({
               type="button"
               title="Clique para adicinar ao carrinho"
               onClick={addToCart}
-            >{`Adicionao ao carrinho R$ - ${formataPreco(preco)}`}</Button>
-          </ModalDescription>
-        </ModalContent>
-        <div
-          className="overlay"
-          onClick={() => setModalEstaAberto(false)}
-        ></div>
-      </ModalContainer>
+              >{`Adicionao ao carrinho R$ - ${parseToBrl(preco)}`}</Button>
+              </S.ModalDescription>
+            </S.ModalContent>
+            <div className="overlay" onClick={() => setOpenModal(false)}></div>
+          </S.ModalContainer>
     </>
   );
 };

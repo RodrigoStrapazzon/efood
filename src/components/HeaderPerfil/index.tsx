@@ -1,20 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import {
-  LinkPerfil,
-  CartPerfil,
-  ContentPerfil,
-  TituloTipoPerfil,
-  TituloPerfil,
-  TextoPerfil,
-} from "./styles";
-
-import LogoEfood from "../../assets/image/logo.svg";
-import sombra from "../../assets/image/sombra.png";
-import { Establishment } from "../../pages/Home";
-
 import { open } from "../../store/reducers/cart";
 import { RootReducer } from "../../store";
+
+import imgfood from "../../assets/image/logo.svg";
+import overlay from "../../assets/image/sombra.png";
+import * as S from "./styles";
+import { Establishment } from "../../pages/Home";
 
 type Props = {
   content: Establishment;
@@ -29,18 +21,20 @@ const HeaderPerfil = ({ content }: Props) => {
 
   return (
     <div>
-      <ContentPerfil className="container">
-        <LinkPerfil to="/">Restaurantes</LinkPerfil>
-        <img src={LogoEfood} alt="logo da efood" />
-        <CartPerfil onClick={openCart}>
+      <S.ContentProfile className="container">
+        <S.LinkProfile title="clique aqui para voltar aos restaurantes" to="/">
+          Restautantes
+        </S.LinkProfile>
+        <img src={imgfood} alt="logo da efood" />
+        <S.CartProfile role="button" onClick={openCart}>
           {items.length} produto(s) no carrinho
-        </CartPerfil>
-      </ContentPerfil>
-      <TextoPerfil>
-        <TituloTipoPerfil>{content.tipo}</TituloTipoPerfil>
-        <TituloPerfil>{content.titulo}</TituloPerfil>
-        <img className="sombra" src={sombra} alt="sombra do banner" />
-      </TextoPerfil>
+        </S.CartProfile>
+      </S.ContentProfile>
+      <S.TextProfile>
+        <S.TitleTypeProfile>{content.tipo}</S.TitleTypeProfile>
+        <S.TitleProfile>{content.titulo}</S.TitleProfile>
+        <img className="sombra" src={overlay} alt="sombra do banner" />
+      </S.TextProfile>
     </div>
   );
 };

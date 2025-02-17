@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 
 import { useGetPerfilQuery } from "../../services/api";
-import { ContainerPerfil } from "./styles";
 import HeaderPerfil from "../../components/HeaderPerfil";
 import ListMenu from "../../components/MenuList";
 import Cart from "../../components/Cart";
+
+import { ContainerPerfil } from './styles'
 
 const Perfil = () => {
   const { id } = useParams();

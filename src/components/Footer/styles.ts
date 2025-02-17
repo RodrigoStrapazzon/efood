@@ -16,12 +16,8 @@ export const FooterBox = styled.div`
   }
 
   img {
-    width: 10%;
+    width: 125px;
     margin: 0 auto;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      width: 18%;
-    }
   }
 
   .imgEfood {
@@ -51,4 +47,12 @@ export const Paragrafo = styled.p`
   line-height: 12px;
   text-align: center;
   color: ${cores.texto};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 280px;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+    width: 280px;
+  }
 `;

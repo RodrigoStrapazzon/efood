@@ -3,14 +3,7 @@ import Tag from "../Tag";
 
 import star from "../../assets/image/star.svg";
 
-import {
-  BoxContainer,
-  BoxContent,
-  Descricao,
-  TagTitle,
-  TitleContainer,
-  Titulo,
-} from "./styles";
+import * as S from './styles'
 
 type Props = {
   id: number;
@@ -29,26 +22,26 @@ const Restaurant = ({
   description,
   image,
 }: Props) => (
-  <BoxContainer>
+  <S.BoxContainer>
     <img src={image} alt={title} />
-    <BoxContent>
-      <TitleContainer>
-        <Titulo>{title}</Titulo>
+    <S.BoxContent>
+      <S.TitleContainer>
+        <S.Titulo>{title}</S.Titulo>
         <div className="note">
-          <Titulo>{note}</Titulo>
+          <S.Titulo>{note}</S.Titulo>
           <img className="star" src={star} alt="ícone estrela" />
         </div>
-      </TitleContainer>
-      <TagTitle>
+      </S.TitleContainer>
+      <S.TagTitle>
         {contents.map((content) => (
           <Tag key={content}>{content}</Tag>
         ))}
-      </TagTitle>
-      <Descricao>{description}</Descricao>
+      </S.TagTitle>
+      <S.Descricao>{description}</S.Descricao>
       <Button type="link" to={`/perfil/${id}`} title="clique e saiba mais">
         Saiba mais
       </Button>
-    </BoxContent>
-  </BoxContainer>
+    </S.BoxContent>
+  </S.BoxContainer>
 );
 export default Restaurant;

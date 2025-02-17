@@ -5,7 +5,9 @@ import fundo from "../../assets/image/fundo.png";
 export const Content = styled.div`
   background-image: url(${fundo});
   background-size: cover;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: ${breakpoints.desktop}) {
     overflow-y: hidden;
@@ -16,13 +18,18 @@ export const Content = styled.div`
     margin-bottom: 100px;
   }
 `;
-export const Texto = styled.p`
+export const Text = styled.p`
   font-size: 36px;
-  font-weight: bold;
   line-height: 42px;
   color: ${cores.texto};
-  width: 700px;
-  margin: 0 auto;
   padding-bottom: 40px;
   background-color: ${cores.fundo};
+  width: 700px;
+  font-weight: 900;
+  text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 28px;
+    width: 350px;
+  }
 `;

@@ -1,29 +1,29 @@
-import LogoEfood from "../../assets/image/logo.svg";
-import LogoInsta from "../../assets/image/Insta.svg";
-import LogoFace from "../../assets/image/Face.svg";
-import LogoTwitter from "../../assets/image/Twitter.svg";
-import { FooterBox, Paragrafo } from "./styles";
+import imgEfood from '../../assets/image/logo.svg'
+import imgInsta from '../../assets/image/Insta.svg'
+import imgFace from '../../assets/image/Face.svg'
+import imgTwitter from '../../assets/image/Twitter.svg'
+import * as S from './styles'
 
 const Footer = () => (
-  <FooterBox className="container">
-    <img className="imgEfood" src={LogoEfood} alt="logo efood" />
+  <S.FooterBox className="container">
+    <img className="imgEfood" src={imgEfood} alt="logo efood" />
     <div className="imgLinks">
       <a href="#">
-        <img src={LogoInsta} alt="logo instagram" />
+        <img src={imgInsta} alt="logo instagram" />
       </a>
       <a href="#">
-        <img src={LogoFace} alt="logo instagram" />
+        <img src={imgFace} alt="logo instagram" />
       </a>
       <a href="#">
-        <img src={LogoTwitter} alt="logo instagram" />
+        <img src={imgTwitter} alt="logo instagram" />
       </a>
     </div>
-    <Paragrafo>
+    <S.Paragrafo>
       A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade dos produtos é toda do
       estabelecimento contratado.{" "}
-    </Paragrafo>
-  </FooterBox>
+    </S.Paragrafo>
+  </S.FooterBox>
 );
 
 export default Footer;

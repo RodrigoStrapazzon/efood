@@ -23,4 +23,9 @@ export const List = styled.ul`
     grid-template-columns: 1fr 1fr;
     margin: 0 0 0 -140px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    margin: 0 0 0 -140px;
+  }
 `;

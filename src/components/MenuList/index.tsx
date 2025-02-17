@@ -1,15 +1,15 @@
 import { MenuItem } from "../../pages/Home";
 import MenuList from "../Menu";
-import { ContainerMenu, List } from "./styles";
+import * as S from './styles'
 
 type Props = {
   menu: MenuItem[];
 };
 
 const ListMenu = ({ menu }: Props) => (
-  <ContainerMenu>
+  <S.ContainerMenu>
     <div className="container">
-      <List>
+      <S.List>
         {menu.map((menu) => (
           <li key={menu.id}>
             <MenuList
@@ -22,9 +22,9 @@ const ListMenu = ({ menu }: Props) => (
             />
           </li>
         ))}
-      </List>
+      </S.List>
     </div>
-  </ContainerMenu>
+  </S.ContainerMenu>
 );
 
 export default ListMenu;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { cores } from "../../../styles/styles";
+import { breakpoints, cores } from "../../../styles/styles";
 import { TagContainer } from "../Tag/styles";
 
 export const BoxContainer = styled.div`
   background-color: ${cores.branco};
   position: relative;
-  width: 471px;
+  width: 100%;
   border: 1px solid ${cores.texto};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 95%;
+    margin: 0 auto;
+  }
 
   .note {
     display: flex;

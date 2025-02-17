@@ -10,6 +10,10 @@ export const Container = styled.section`
   @media (max-width: ${breakpoints.desktop}) {
     width: 60%;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
 `;
 
 export const List = styled.ul`

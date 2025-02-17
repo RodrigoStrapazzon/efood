@@ -1,12 +1,14 @@
-import { Content, Texto } from "./styles";
+import * as S from "./styles";
 
-import LogoEfood from "../../assets/image/logo.svg";
+import imgfood from "../../assets/image/logo.svg";
 
 const Header = () => (
-  <Content className="container">
-    <img src={LogoEfood} alt="logo da efood" />
-    <Texto>Viva experiências gastronômicas no conforto da sua casa</Texto>
-  </Content>
+  <S.Content className="container">
+    <h1>
+      <img src={imgfood} alt="logo da efood" />
+    </h1>
+    <S.Text>Viva experiências gastronômicasno conforto da sua casa</S.Text>
+  </S.Content>
 );
 
 export default Header;
