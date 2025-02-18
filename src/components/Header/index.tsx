@@ -7,7 +7,7 @@ const Header = () => (
     <h1>
       <img src={imgfood} alt="logo da efood" />
     </h1>
-    <S.Text>Viva experiências gastronômicasno conforto da sua casa</S.Text>
+    <S.Text>Viva experiências gastronômicas no conforto da sua casa</S.Text>
   </S.Content>
 );
 
