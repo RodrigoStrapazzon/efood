@@ -6,7 +6,7 @@ import { RootReducer } from "../../store";
 import imgfood from "../../assets/image/logo.svg";
 import overlay from "../../assets/image/sombra.png";
 import * as S from "./styles";
-import { Establishment } from "../../pages/Home";
+
 
 type Props = {
   content: Establishment;
@@ -20,10 +20,10 @@ const HeaderPerfil = ({ content }: Props) => {
   };
 
   return (
-    <div>
-      <S.ContentProfile className="container">
+    <div className="container">
+      <S.ContentProfile>
         <S.LinkProfile title="clique aqui para voltar aos restaurantes" to="/">
-          Restautantes
+          Restaurantes
         </S.LinkProfile>
         <img src={imgfood} alt="logo da efood" />
         <S.CartProfile role="button" onClick={openCart}>

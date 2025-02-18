@@ -1,4 +1,3 @@
-import { MenuItem } from "../../pages/Home";
 import MenuList from "../Menu";
 import * as S from './styles'
 

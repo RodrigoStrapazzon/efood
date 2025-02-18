@@ -1,4 +1,3 @@
-import { Establishment } from "../../pages/Home";
 import Restaurant from "../BoxRestaurant";
 import * as S from './styles'
 

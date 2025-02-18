@@ -8,6 +8,7 @@ export const ContainerPerfil = styled.div`
     width: 1366px;
     height: 280px;
     object-fit: cover;
+    margin: 0 auto;
 
     @media (max-width: ${breakpoints.desktop}) {
       width: 100%;
@@ -17,7 +18,6 @@ export const ContainerPerfil = styled.div`
   .sombra {
     position: absolute;
     top: 185px;
-    left: 0;
     z-index: 0;
     background: rgba(0, 0, 0, 0.2);
   }

@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { add, open } from "../../store/reducers/cart";
 
 import { parseToBrl } from "../../utils";
-import { MenuItem } from "../../pages/Home";
 import { ButtonCart } from "../Button/styles";
 import Button from "../Button";
 
@@ -36,6 +36,7 @@ const MenuList = ({
   const [openModal, setOpenModal] = useState(false);
 
   const dispatch = useDispatch();
+
   const addToCart = () => {
     dispatch(add(item!));
     dispatch(open());
@@ -56,7 +57,7 @@ const MenuList = ({
         </ButtonCart>
       </S.BoxMenu>
 
-      <S.ModalContainer className={openModal ? 'is-visible' : ''}>
+      <S.ModalContainer className={openModal ? "is-visible" : ""}>
         <S.ModalContent>
           <img src={image} alt={title} />
           <S.ModalDescription>
@@ -72,11 +73,11 @@ const MenuList = ({
               type="button"
               title="Clique para adicinar ao carrinho"
               onClick={addToCart}
-              >{`Adicionao ao carrinho R$ - ${parseToBrl(preco)}`}</Button>
-              </S.ModalDescription>
-            </S.ModalContent>
-            <div className="overlay" onClick={() => setOpenModal(false)}></div>
-          </S.ModalContainer>
+            >{`Adicionao ao carrinho R$ - ${parseToBrl(preco)}`}</Button>
+          </S.ModalDescription>
+        </S.ModalContent>
+        <div className="overlay" onClick={() => setOpenModal(false)}></div>
+      </S.ModalContainer>
     </>
   );
 };
