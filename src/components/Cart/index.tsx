@@ -4,6 +4,7 @@ import InputMask from "react-input-mask";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "../Button";
+import { RootReducer } from "../../store";
 
 import { clear, close, open, remove } from "../../store/reducers/cart";
 import { usePurchaseMutation } from "../../services/api";
