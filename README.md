@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# EFOOD - Simulação de E-commerce de Restaurantes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EFOOD é um projeto que simula um e-commerce de restaurantes, permitindo aos usuários visualizar e comprar pratos oferecidos por diversos estabelecimentos. Utiliza requisições para listar restaurantes e seus respectivos pratos por meio de uma API.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Listagem de Restaurantes:** Os usuários podem visualizar uma lista de restaurantes disponíveis.
+- **Listagem de Pratos:** Dentro de cada restaurante, é possível visualizar os pratos oferecidos.
+- **Carrinho de Compras:** Os clientes podem adicionar e remover pratos do carrinho, com a capacidade de calcular a soma dos valores dos itens.
+- **Geração de Token de Pedido:** Um token de pedido é gerado quando o usuário finaliza a compra.
+- **Checkout e Pagamento:** O projeto oferece funcionalidades básicas de checkout e pagamento.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: utilizado para a construção da interface do usuário.
+- **React Router DOM**: para a navegação entre as diferentes páginas do aplicativo.
+- **Redux**: gerenciamento de estado, especialmente para o carrinho de compras.
+- **React Query**: utilizado para realizar requisições e armazenar em cache os dados da API.
+- **Styled-Components**: biblioteca para estilização dos componentes.
+- **TypeScript**: uma biblioteca que facilita a criação de formulários em React.
+- **Formik**: adiciona tipagem estática ao JavaScript, aumentando a robustez e a manutenibilidade do código.
+- **Yup**: uma biblioteca que permite validar os dados dos formulários.
 
-- Configure the top-level `parserOptions` property like this:
+## Como Executar
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone o repositório do projeto:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`````bash
+git clone https://github.com/seu-usuario/efood.git
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Navegue até o diretório do projeto:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+````bash
+cd efood
+
+3. Instale as dependências:
+
+````bash
+npm install
+# ou
+yarn install
+
+4. Inicie o servidor de desenvolvimento:
+
+````bash
+npm run dev
+# ou
+yarn dev
+
+
+`````
